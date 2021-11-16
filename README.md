@@ -1,5 +1,6 @@
 ![](http://static.altiria.com/wp-content/themes/altiria/images/logo-altiria.png)
 
+# VERSION EN DESARROLLO, NO USAR
 
 # Altiria, cliente SMS Python
 
@@ -57,7 +58,6 @@ try:
 	textMessage = AltiriaModelTextMessage('346XXXXXXXX', 'Mensaje de prueba')
 	jsonText = client.sendSms(textMessage)
 	print('¡Mensaje enviado!')
-
 except AltiriaGwException as ae:
 	print('Mensaje no aceptado:'+ae.message)
 	print('Código de error:'+ae.status)
@@ -83,7 +83,6 @@ try:
 	textMessage = AltiriaModelTextMessage('346XXXXXXXX', 'Mensaje de prueba')
 	jsonText = client.sendSms(textMessage)
 	print('¡Mensaje enviado!')
-
 except AltiriaGwException as ae:
 	print('Mensaje no aceptado:'+ae.message)
 	print('Código de error:'+ae.status)
@@ -108,7 +107,6 @@ try:
 	textMessage = AltiriaModelTextMessage('346XXXXXXXX', 'Mensaje de prueba', 'miRemitente')
 	jsonText = client.sendSms(textMessage)
 	print('¡Mensaje enviado!')
-
 except AltiriaGwException as ae:
 	print('Mensaje no aceptado:'+ae.message)
 	print('Código de error:'+ae.status)
@@ -136,8 +134,7 @@ logging.basicConfig(filename='app.log',
                             level=logging.DEBUG)
 
 try:
-    logging.debug('Enviando SMS...')
-
+    	logging.debug('Enviando SMS...')
 	client = AltiriaClient('miusuario@email.com', 'contraseña')
 	client.setConnectionTimeout(1000)
 	client.setTimeout(5000)
@@ -150,7 +147,6 @@ try:
 	textMessage.certDelivery=True
 	jsonText = client.sendSms(textMessage)
 	print('¡Mensaje enviado!')
-
 except AltiriaGwException as ae:
 	print('Mensaje no aceptado:'+ae.message)
 	print('Código de error:'+ae.status)
@@ -177,7 +173,6 @@ try:
 	client = AltiriaClient('miusuario@email.com', 'contraseña')
 	credit = client.getCredit()
 	print('Crédito disponible: '+credit)
-
 except AltiriaGwException as ae:
 	print('Solicitud no aceptada:'+ae.message)
 	print('Código de error:'+ae.status)
@@ -199,11 +194,10 @@ from sms_api.altiria_client import *
 
 try:
 	client = AltiriaClient('miusuario@email.com', 'contraseña')
-    client.setConnectionTimeout(1000)
+    	client.setConnectionTimeout(1000)
 	client.setTimeout(5000)
 	credit = client.getCredit()
 	print('Crédito disponible: '+credit)
-
 except AltiriaGwException as ae:
 	print('Solicitud no aceptada:'+ae.message)
 	print('Código de error:'+ae.status)
