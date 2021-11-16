@@ -15,7 +15,7 @@ Los parámetros a configurar son los siguientes:
 - sender: (opcional) remitente. Sólo se debe asignar un valor para el remitente si ha sido previamente autorizado por Altiria. En caso contrario asignar None como valor.
 - debug: si se le asigna el valor true, se mostrará información adicional por consola que puede resultar interesante para depurar.
 
-Finalmente, para correr todos los tests ejecutar el comando **make tests** desde el directorio raíz del proyecto.
+Finalmente, para correr todos los tests ejecutar el comando **make test** desde el directorio raíz del proyecto.
 
 
 
