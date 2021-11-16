@@ -131,10 +131,11 @@ class AltiriaClient():
             jsonData['destination']=destinations
             jsonData['message']=messageData
             jsonData['source']=self.source
-            contentType = {'Content-Type':'application/json;charset=UTF-8'}
+            contentType = {'Content-Type':'application/json;charset=utf-8'}
+
             try:
                 response = requests.post(self.urlBase+'/sendSms',
-                        data=JSON.dumps(jsonData),
+                        data=JSON.dumps(jsonData,ensure_ascii=False).encode('utf-8'),
                         headers=contentType,
                         timeout=(self.__connectionTimeout/1000, self.__timeout/1000))
                 log.info('HTTP status: '+str(response.status_code))
