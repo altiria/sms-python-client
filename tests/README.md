@@ -7,7 +7,7 @@ Para poder utilizar nuestro servicio es necesario previamente crear una cuenta e
 
 Cabe mencionar que este proyecto consta de una **sección de tests** que al ser lanzados pueden suponer un **consumo de créditos**. En concreto, son los test "TestSendSmsHttp.test_ok_mandatory_params" y "TestSendSmsHttp.test_ok_all_params" que al ser lanzados consumirán un mínimo de tres créditos. Este consumo puede verse incrementado si se habilita la características "certDelivery" comentada en el test "TestSendSmsHttp.test_ok_all_params", para certificar la entrega del SMS.
 
-Antes de lanzar los tests es necesario **parametrizar cada suite** modificando las variables definidas en el archivo "__init_.py" bajo el comentario "configurable parameters".
+Antes de lanzar los tests es necesario **parametrizar cada suite** modificando las variables definidas en el archivo "\__init__.py" bajo el comentario "configurable parameters".
 Los parámetros a configurar son los siguientes:
 - login: email de la cuenta.
 - password: contraseña de la cuenta.
