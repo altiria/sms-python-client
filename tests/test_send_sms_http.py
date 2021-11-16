@@ -45,7 +45,7 @@ class TestSendSmsHttp(unittest.TestCase,Config):
             print('test_ok_all_params')
 
         message='Lorem Ipsum is simply dummy text of the printing and typesetting industry \u20AC'
-        idAck='hola'
+        idAck='idAck'
 
         client = AltiriaClient(Config.login, Config.password)
         textMessage = AltiriaModelTextMessage(Config.destination, message, Config.sender)
