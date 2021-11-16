@@ -15,7 +15,7 @@ from tests import Config
 
 class TestSendSmsHttp(unittest.TestCase,Config):
 
-
+    
     # Only mandatory parameters are sent.
     def test_ok_mandatory_params(self):
         if Config.debug:
@@ -79,6 +79,7 @@ class TestSendSmsHttp(unittest.TestCase,Config):
         # Uncomment if idAck is used.
         #self.assertEqual(idAck, str(details[1]['idAck']))
 
+    
     # Invalid credentials.
     def test_error_invalid_credentials(self):
         if Config.debug:
@@ -95,6 +96,7 @@ class TestSendSmsHttp(unittest.TestCase,Config):
             self.assertEqual('AUTHENTICATION_ERROR', ae.message)
             self.assertEqual('020', ae.status)
     
+
     # The destination parameter is invalid.
     def test_error_invalid_destination(self):
         if Config.debug:
@@ -110,6 +112,7 @@ class TestSendSmsHttp(unittest.TestCase,Config):
         except AltiriaGwException as ae:
             self.assertEqual('INVALID_DESTINATION', ae.message)
             self.assertEqual('015', ae.status)
+    
     
     # The message parameter is empty.
     def test_error_empty_message(self):
