@@ -1,13 +1,15 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 from setuptools import setup, find_packages
+import io
 
-with open('README.md') as f:
+with io.open('README.md', 'r', encoding='utf8') as f:
     long_description = f.read()
 
 setup(
     name='sms-python-client',
-    version='0.9',
+    version='1.0',
     description='Client library to send SMS using Altiria SMS API',
     author='altiria',
     author_email='soporte@altiria.com',
