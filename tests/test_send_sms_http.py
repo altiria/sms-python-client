@@ -44,7 +44,7 @@ class TestSendSmsHttp(unittest.TestCase,Config):
         if Config.debug:
             print('test_ok_all_params')
 
-        message='Lorem Ipsum is simply dummy text of the printing and typesetting industry \u20AC'
+        message='Lorem Ipsum is simply dummy text of the printing and typesetting industry €'
         idAck='idAck'
 
         client = AltiriaClient(Config.login, Config.password)
