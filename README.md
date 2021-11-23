@@ -1,10 +1,8 @@
 ![](http://static.altiria.com/wp-content/themes/altiria/images/logo-altiria.png)
 
-# VERSION EN DESARROLLO, NO USAR
-
 # Altiria, cliente SMS Python
 
- ![](https://img.shields.io/badge/version-0.9.0-blue.svg)
+ ![](https://img.shields.io/badge/version-1.0.3-blue.svg)
 
 Altiria SMS Python es un cliente que simplifica al máximo la integración de nuestro API para Python. Por el momento, esta librería abarca las funciones más básicas:
 - **Envíos de SMS individuales** con las siguientes características:
@@ -19,6 +17,7 @@ Altiria SMS Python es un cliente que simplifica al máximo la integración de nu
 ## Requisitos
 
 - python 2.7+, 3.+.
+Aunque este módulo es compatible con la versión 2 de python, **se recomienda utilizar la versión 3**.
 
 ## Instalación
 
@@ -120,7 +119,7 @@ except ConnectionException as ce:
 ```
 #### Ejemplo con todos los parámetros
 
-Se muestra un ejemplo utilizando todo los parámetros e integrando el módulo de **logging**.
+Se muestra un ejemplo utilizando todos los parámetros e integrando el módulo de **logging**.
 La implementación de este módulo permite depurar el log de la librería.
 
 ```python
