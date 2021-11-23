@@ -69,7 +69,7 @@ class AltiriaClient():
 
     # API URL
     urlBase='https://www.altiria.net:8443/apirest/ws'
-
+    
     # Library name/version
     source='lib-python-pip-1_0'
 
@@ -135,7 +135,7 @@ class AltiriaClient():
 
             try:
                 response = requests.post(self.urlBase+'/sendSms',
-                        data=JSON.dumps(jsonData,ensure_ascii=False).encode('utf-8'),
+                        data=JSON.dumps(jsonData),
                         headers=contentType,
                         timeout=(self.__connectionTimeout/1000, self.__timeout/1000))
                 log.info('HTTP status: '+str(response.status_code))
