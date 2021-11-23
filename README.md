@@ -17,6 +17,7 @@ Altiria SMS Python es un cliente que simplifica al máximo la integración de nu
 ## Requisitos
 
 - python 2.7+, 3.+.
+
 Aunque este módulo es compatible con la versión 2 de python, **se recomienda utilizar la versión 3**.
 
 ## Instalación
@@ -122,7 +123,7 @@ except ConnectionException as ce:
 Se muestra un ejemplo utilizando todos los parámetros e integrando el módulo de **logging**.
 La implementación de este módulo permite depurar el log de la librería.
 
-**La siguiente limitación afecta solamente a python 2**:
+##### La siguiente limitación afecta solamente a python 2**:
 Tal y como se indica en el código, se recomienda desactivar la excepciones generadas por el módulo de logging si se utiliza la versión 2 de python.
 De lo contrario, este módulo lanzará excepciones si el mensaje contiene caracteres no ASCII.
 Hay que tener en cuenta que las líneas de log que terminan en error son omitidas.
