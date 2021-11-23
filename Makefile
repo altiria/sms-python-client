@@ -32,5 +32,5 @@ dist: check
 	${PYTHON} setup.py bdist_wheel
 
 
-install_dist: check
+install_dist: dist
 	${PIP} install dist/sms-python-client-1.0.3.tar.gz
