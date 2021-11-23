@@ -33,4 +33,4 @@ dist: check
 
 
 install_dist: dist
-	${PIP} install dist/sms-python-client-1.0.3.tar.gz
+	${PIP} install dist/*.tar.gz
