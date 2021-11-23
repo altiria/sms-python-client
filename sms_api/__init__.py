@@ -8,6 +8,7 @@ f=None
 try:
     f = open(logFile)
     log.config.fileConfig(logFile)
+    log.raiseExceptions = False
 except Exception:
     pass
 finally:
