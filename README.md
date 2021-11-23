@@ -122,6 +122,11 @@ except ConnectionException as ce:
 Se muestra un ejemplo utilizando todos los parámetros e integrando el módulo de **logging**.
 La implementación de este módulo permite depurar el log de la librería.
 
+**La siguiente limitación afecta solamente a python 2**:
+Tal y como se indica en el código, se recomienda desactivar la excepciones generadas por el módulo de logging si se utiliza la versión 2 de python.
+De lo contrario, este módulo lanzará excepciones si el mensaje contiene caracteres no ASCII.
+Hay que tener en cuenta que las líneas de log que terminan en error son omitidas.
+
 ```python
 from sms_api.altiria_client import *
 import logging
@@ -131,6 +136,8 @@ logging.basicConfig(filename='app.log',
                             format='%(asctime)s %(levelname)s %(module)s.%(funcName)s:%(lineno)d [%(thread)d, %(threadName)s] - %(message)s',
                             datefmt='%d/%m/%Y %H:%M:%S',
                             level=logging.DEBUG)
+# Uncomment only to python 2
+#logging.raiseExceptions = False
 
 try:
     	logging.debug('Enviando SMS...')
