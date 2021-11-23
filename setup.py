@@ -9,7 +9,7 @@ with io.open('README.md', 'r', encoding='utf8') as f:
 
 setup(
     name='sms-python-client',
-    version='1.0',
+    version='1.0.3',
     description='Client library to send SMS using Altiria SMS API',
     author='altiria',
     author_email='soporte@altiria.com',
@@ -20,7 +20,7 @@ setup(
         'requests'
     ],
     classifiers=(
-        'Development Status :: 4 - Beta',
+        'Development Status :: 5 - Production/Stable',
         'License :: OSI Approved :: MIT License',
         'Topic :: Software Development :: Libraries :: Python Modules',
         'Programming Language :: Python :: 2.7',
