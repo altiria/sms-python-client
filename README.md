@@ -3,15 +3,16 @@
 # Altiria, cliente SMS Python
 
  ![](https://img.shields.io/badge/version-1.0.3-blue.svg)
-
-Altiria SMS Python es un cliente que simplifica al máximo la integración de nuestro API para Python. Por el momento, esta librería abarca las funciones más básicas:
+ 
+Altiria SMS Python es el cliente de envío de SMS que simplifica al máximo la integración del API SMS para Python de Altiria.
 - **Envíos de SMS individuales** con las siguientes características:
   - sencillos
   - concatenados
-  - certificación de entrega con o sin identificador
-  - certificado digital de entrega
   - uso de remitente
   - seleccionar codificación
+  - certificación de entrega con o sin identificador
+  - certificado digital de entrega
+
 - **Consultas de crédito**
 
 ## Requisitos
@@ -27,7 +28,7 @@ La forma recomendada de instalar el cliente Altiria para Python es a través de 
 ### Si tienes PIP instalado
 
 <pre>
-sudo pip install sms-php-client
+sudo pip install sms-python-client
 </pre>
 
 ### Si no tienes PIP instalado
@@ -167,7 +168,7 @@ except ConnectionException as ce:
 ```
 ### Consulta de crédito
 
-A continuación se describen cada una de las posibilidades de uso de la librería para consultar el crédito.
+Ejemplos de consulta del crédito de SMS en la cuenta de Altiria.
 
 #### Ejemplo básico
 
@@ -192,9 +193,9 @@ except ConnectionException as ce:
 		print('Tiempo de conexión agotado:'+ce.message)
 ```
 
-#### Ejemplo con todos los parámetros
+#### Ejemplo con timeout
 
-Este ejemplo incluye los parámetros opcionales.
+Este ejemplo permite definir el timeout de la conexión.
 
 ```python
 from sms_api.altiria_client import *
