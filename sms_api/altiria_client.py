@@ -236,13 +236,7 @@ class AltiriaClient():
             errorMessage = 'TOO_MANY_MESSAGES'
         elif status=='020':
             errorMessage = 'AUTHENTICATION_ERROR'
-        elif status=='030': 
-            errorMessage = 'URL_AND_MESSAGE_ARE_TOO_LONG'
-        elif status=='031': 
-            errorMessage = 'INVALID_URL_LENGTH'
-        elif status=='032': 
-            errorMessage = 'INVALID_URL_CHARS'
-        elif status=='033': 
+        elif status=='033':
             errorMessage = 'INVALID_DESTINATION_SMS_PORT'
         elif status=='034': 
             errorMessage = 'INVALID_ORIGIN_SMS_PORT'
