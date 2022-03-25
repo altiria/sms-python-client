@@ -26,7 +26,17 @@ class TestGetCreditHttp(unittest.TestCase,Config):
 
         # Check your credit here    
         # self.assertEqual('100.00',credit)
-    
+
+    # Basic case using apikey.
+    def test_ok_apikey(self):
+        if Config.debug:
+            print('test_ok_apikey')
+        
+        client = AltiriaClient(Config.apiKey, Config.apiSecret, True)
+        credit = client.getCredit()
+
+        # Check your credit here
+        # self.assertEqual('100.00',credit) 
 
     # Invalid credentials.
     def test_error_invalid_credentials(self):

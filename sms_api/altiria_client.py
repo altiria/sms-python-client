@@ -49,11 +49,13 @@ class AltiriaClient():
     login=None
     passwd=None
     textMessage=None
+    isApiKey=False
 
     #Constructor
-    def __init__(self, login, password, timeout=None):
+    def __init__(self, login, password, isApiKey=False, timeout=None):
         self.login=login
         self.passwd=password
+        self.isApiKey=isApiKey
         if timeout!=None:
             self.setTimeout(timeout)
 
@@ -96,6 +98,14 @@ class AltiriaClient():
         destinations=[]
         messageData={}
         try:
+            if self.login==None:
+                log.error('ERROR: The login parameter is mandatory')
+                raise JsonException('LOGIN_NOT_NULL')
+            
+            if self.passwd==None:
+                log.error('ERROR: The password parameter is mandatory')
+                raise JsonException('PASSWORD_NOT_NULL')
+
             if textMessage.destination==None or textMessage.destination.strip()=='':
                 log.error('ERROR: The destination parameter is mandatory')
                 raise AltiriaGwException('INVALID_DESTINATION', '015')
@@ -125,7 +135,9 @@ class AltiriaClient():
             if textMessage.encoding!=None and textMessage.encoding.strip()=='unicode':
                 messageData['encoding']=textMessage.encoding.strip()
 
-            credentials = {'login': self.login, 'passwd': self.passwd}
+            loginKey =  'apikey' if self.isApiKey else 'login'
+            passwordKey =  'apisecret' if self.isApiKey else 'passwd'
+            credentials = {loginKey: self.login, passwordKey: self.passwd}
             jsonData = {}
             jsonData['credentials']=credentials
             jsonData['destination']=destinations
@@ -172,7 +184,17 @@ class AltiriaClient():
         log.info('Altiria-getCredit CMD')
 
         try:
-            credentials = {'login': self.login, 'passwd': self.passwd}
+            if self.login==None:
+                log.error('ERROR: The login parameter is mandatory')
+                raise JsonException('LOGIN_NOT_NULL')
+            
+            if self.passwd==None:
+                log.error('ERROR: The password parameter is mandatory')
+                raise JsonException('PASSWORD_NOT_NULL')
+
+            loginKey =  'apikey' if self.isApiKey else 'login'
+            passwordKey =  'apisecret' if self.isApiKey else 'passwd'
+            credentials = {loginKey: self.login, passwordKey: self.passwd}
             jsonData = {}
             jsonData['credentials']=credentials
             jsonData['source']=self.source

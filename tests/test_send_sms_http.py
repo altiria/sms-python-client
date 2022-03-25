@@ -35,6 +35,7 @@ class TestSendSmsHttp(unittest.TestCase,Config):
     
     # All params are sent.
     # Features:
+    # - apikey authentication
     # - sender
     # - delivery confirmation with identifier
     # - concatenated
@@ -47,7 +48,7 @@ class TestSendSmsHttp(unittest.TestCase,Config):
         message='Lorem Ipsum is simply dummy text of the printing and typesetting industry €'
         idAck='idAck'
 
-        client = AltiriaClient(Config.login, Config.password)
+        client = AltiriaClient(Config.apiKey, Config.apiSecret, True)
         textMessage = AltiriaModelTextMessage(Config.destination, message, Config.sender)
         # You can also assign the sender here
         #textMessage.senderId=Config.sender
