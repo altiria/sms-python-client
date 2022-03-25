@@ -2,7 +2,7 @@
 
 # Altiria, cliente SMS Python
 
- ![](https://img.shields.io/badge/version-1.0.3-blue.svg)
+ ![](https://img.shields.io/badge/version-1.0.4-blue.svg)
  
 Altiria SMS Python es el cliente de envío de SMS que simplifica al máximo la integración del API SMS para Python de Altiria.
 - **Envíos de SMS individuales** con las siguientes características:
@@ -80,7 +80,7 @@ Por defecto el tiempo de respuesta es de 10 segundos, pero puede ser ajustado en
 from sms_api.altiria_client import *
 
 try:
-	client = AltiriaClient('miusuario@email.com', 'contraseña', 5000)
+	client = AltiriaClient('miusuario@email.com', 'contraseña', False, 5000)
 	textMessage = AltiriaModelTextMessage('346XXXXXXXX', 'Mensaje de prueba')
 	jsonText = client.sendSms(textMessage)
 	print('¡Mensaje enviado!')
@@ -98,13 +98,13 @@ except ConnectionException as ce:
 
 #### Ejemplo básico con remitente
 
-Se trata de la opción más sencilla para realizar un envío de SMS añadiendo remitente.
+Se trata de la opción más sencilla para realizar un envío de SMS añadiendo remitente. En este caso, se ilustra cómo realizar una autentificación mediante APIKEY, donde "XXXXXXXXXX" es el parámetro **apiKey** y "YYYYYYYYYY" el parámetro **apiSecret**.
 
 ```python
 from sms_api.altiria_client import *
 
 try:
-	client = AltiriaClient('miusuario@email.com', 'contraseña')
+	client = AltiriaClient('XXXXXXXXXX', 'YYYYYYYYYY', True)
 	textMessage = AltiriaModelTextMessage('346XXXXXXXX', 'Mensaje de prueba', 'miRemitente')
 	jsonText = client.sendSms(textMessage)
 	print('¡Mensaje enviado!')
